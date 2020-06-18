@@ -20,7 +20,7 @@
     <thead>
         <tr>
           <td>ID</td>
-          <td>Context</td>
+          <td>Company (context)</td>
           <td>Auth Username</td>
           <td>Auth Password</td>
           <td>Aors Max Contacts</td>
@@ -33,7 +33,7 @@
         @foreach($ps_endpoints as $endpoint)
         <tr>
             <td>{{$endpoint->id}}</td>
-            <td>{{$endpoint->context}} </td>
+            <td><a href="/contexts/?context={{$endpoint->context}}">{{$endpoint->context}}</a> </td>
             <td>{{$endpoint->username}} </td>
             <td>{{$endpoint->password}} </td>
             <td> {{$endpoint->max_contacts}} </td>

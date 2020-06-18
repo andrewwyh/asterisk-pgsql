@@ -12,8 +12,9 @@ class ContextController extends Controller
 {
     public function index()
     {
-    
+        return view('endpoints.context');
     }
+
     public function show(Request $request)
     {
         /*$request->validate([
