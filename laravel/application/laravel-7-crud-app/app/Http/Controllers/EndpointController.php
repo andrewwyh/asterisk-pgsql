@@ -7,6 +7,7 @@ use App\ps_endpoints;
 use App\ps_aors;
 use App\ps_auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class EndpointController extends Controller
 {
@@ -80,12 +81,19 @@ class EndpointController extends Controller
             'max_contacts' => "1",
             'remove_existing' => "yes"
         ]);
-
+        /*
         $endpoint->save();
         $auth->save();
         $aors->save();
 
         return redirect('/endpoints')->with('success', 'Contact saved!');
+        */
+
+        $contents = "Contents\n";
+        $contents .= "two";
+        Storage::disk('local')->put('/pjsip-extensions/file.txt', $contents);
+
+        print ("<html>Saved!</html>");
     }
 
     /**
