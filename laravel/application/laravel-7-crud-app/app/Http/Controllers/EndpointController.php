@@ -140,14 +140,25 @@ class EndpointController extends Controller
         $aors = ps_aors::find($id);
 
         $endpoint->id = $request->get('id');
+        $endpoint->auth=$request->get('id');
+        $endpoint->aors=$request->get('id');
         $endpoint->context = $request->get('context');
         $endpoint->pickup_group = $request->get('pickup_group');
+        $endpoint->save();
 
         $auth->id = $request->get('id');
         $auth->username = $request->get('id');
         $auth->password = $request->get('password');
+        $auth->save();
 
         $aors->id = $request->get('id');
+        $aors->save();
+
+        print "ID is ".$request->get('id');
+        print "Context is ".$request->get('context');
+
+        return redirect('endpoints')->with('success','Contact Edited!');
+
     }
 
     /**
