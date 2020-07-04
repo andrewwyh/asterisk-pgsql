@@ -1,6 +1,6 @@
-@extends('base')
+@extends('layouts.app')
 
-@section('main')
+@section('content')
 <div class="col-sm-12">
 
   @if(session()->get('success'))
@@ -11,7 +11,7 @@
 </div>
   
 <div class="row">
-<div class="col-sm-12">
+<div class="col-sm-8 offset-sm-2">
     <h2 class="display-4">Extensions by Company</h2>    
 
 <div style="margin-top:100px"></div>
@@ -29,7 +29,9 @@
           <td>Auth Password</td>
           <td>Aors Max Contacts</td>
           <td>Aors Remove Existing</td>
-
+          <td>Registered?</td>
+          <td>URI</td>
+          <td>User Agent</td>
           <td colspan = 2>Actions</td>
         </tr>
     </thead>
@@ -42,6 +44,12 @@
             <td>{{$endpoint->password}} </td>
             <td> {{$endpoint->max_contacts}} </td>
             <td>{{$endpoint->remove_existing}} </td>
+            <td>@if (!$endpoint->uri=="")Yes
+                @else No
+                @endif
+            </td>
+            <td>{{$endpoint->uri}} </td>
+            <td>{{$endpoint->user_agent}} </td>
               <td>
               <a href="{{ URL::to('endpoints/' . $endpoint->id) . '/edit'}}" class="btn btn-primary">Edit</a>
             </td>
