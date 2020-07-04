@@ -53,4 +53,5 @@ Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->na
 /* Route::get('email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify'); // v5.x */
 Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'EndpointController@index');
+//Route::get('/home', 'HomeController@index')->name('home');
