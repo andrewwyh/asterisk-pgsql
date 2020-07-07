@@ -19,8 +19,8 @@
   <table class="table table-striped">
     <thead>
         <tr>
-          <td>ID</td>
           <td>Company (context)</td>
+          <td>ID</td>
           <td>Auth Username</td>
           <td>Auth Password</td>
           <td>Aors Max Contacts</td>
@@ -32,8 +32,8 @@
     <tbody>
     @foreach($ps_endpoints as $endpoint)
         <tr>
-            <td>{{$endpoint->id}}</td>
             <td><a href="/contexts/?context={{$endpoint->context}}">{{$endpoint->context}}</a> </td>
+            <td>{{$endpoint->id}}</td>
             <td>{{$endpoint->username}} </td>
             <td>{{$endpoint->password}} </td>
             <td> {{$endpoint->max_contacts}} </td>

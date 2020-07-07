@@ -20,6 +20,8 @@ class EndpointController extends Controller
     {
 
         $ps_endpoints = DB::table('ps_endpoints')
+        ->orderBy('ps_endpoints.context', 'asc')
+        ->orderBy('ps_endpoints.id','asc')
         ->leftJoin('ps_auths','ps_endpoints.id','=','ps_auths.id')
         ->leftJoin('ps_aors','ps_endpoints.id','=', 'ps_aors.id')
         -> get();
