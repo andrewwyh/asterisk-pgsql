@@ -23,9 +23,8 @@
           <td>ID</td>
           <td>Auth Username</td>
           <td>Auth Password</td>
-          <td>Aors Max Contacts</td>
-          <td>Aors Remove Existing</td>
-
+          <td>Registered?</td>
+          <td>User Agent</td>
           <td colspan = 2>Actions</td>
         </tr>
     </thead>
@@ -36,8 +35,11 @@
             <td>{{$endpoint->id}}</td>
             <td>{{$endpoint->username}} </td>
             <td>{{$endpoint->password}} </td>
-            <td> {{$endpoint->max_contacts}} </td>
-            <td>{{$endpoint->remove_existing}} </td>
+            <td>@if (!$endpoint->uri=="")Yes
+                @else No
+                @endif
+            </td>
+            <td>{{$endpoint->user_agent}} </td>
               <td>
                 <a href="{{ URL::to('endpoints/' . $endpoint->id) . '/edit'}}" class="btn btn-primary">Edit</a>
             </td>
