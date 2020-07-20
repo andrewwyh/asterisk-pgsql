@@ -103,4 +103,5 @@ services:
       working_dir: /application
       volumes:
         - ./laravel/application:/application
+        - ./etc/asterisk/extensions.d:/application/laravel-7-crud-app/extensions.d
         - ./laravel/sourcefiles/php-fpm/php-ini-overrides.ini:/etc/php/7.3/fpm/conf.d/99-overrides.ini
