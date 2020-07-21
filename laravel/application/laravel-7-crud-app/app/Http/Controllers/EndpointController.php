@@ -86,19 +86,20 @@ class EndpointController extends Controller
             'remove_existing' => "yes",
             'maximum_expiration' => "60"
         ]);
-        /*
+        
         $endpoint->save();
         $auth->save();
         $aors->save();
 
         return redirect('/endpoints')->with('success', 'Contact saved!');
-        */
-
+        
+        /* commented due to extensions.d file saving not used anymore
         $contents = "Contents\n";
         $contents .= "two";
-        Storage::disk('local')->put('/pjsip-extensions/file.txt', $contents);
+        Storage::disk('local')->put('/extensions.d/file.txt', $contents);
 
         print ("<html>Saved!</html>");
+        */
     }
 
     /**

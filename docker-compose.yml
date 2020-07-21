@@ -2,7 +2,7 @@ version: '3'
 
 services:
   asterisk:
-    image: andrewwyh/asterisk-docker
+    image: andrewwyh/asterisk-docker:amd64
     restart: always    
     volumes:
       - "${PWD}/etc/asterisk/:/etc/asterisk:rw"
@@ -103,5 +103,4 @@ services:
       working_dir: /application
       volumes:
         - ./laravel/application:/application
-        - ./etc/asterisk/extensions.d:/application/laravel-7-crud-app/extensions.d
         - ./laravel/sourcefiles/php-fpm/php-ini-overrides.ini:/etc/php/7.3/fpm/conf.d/99-overrides.ini
