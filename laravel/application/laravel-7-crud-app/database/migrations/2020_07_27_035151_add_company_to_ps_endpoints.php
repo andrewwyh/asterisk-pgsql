@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddContextToDialplan extends Migration
+class AddCompanyToPsEndpoints extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddContextToDialplan extends Migration
      */
     public function up()
     {
-        Schema::table('dialplans', function (Blueprint $table) {
-            $table->string('context'); 
+        Schema::table('ps_endpoints', function (Blueprint $table) {
+            $table->string('company')->nullable(); 
         });
     }
 
@@ -25,8 +25,8 @@ class AddContextToDialplan extends Migration
      */
     public function down()
     {
-        Schema::table('dialplans', function (Blueprint $table) {
-            //
+        Schema::table('ps_endpoints', function (Blueprint $table) {
+            Schema::dropIfExists('company');
         });
     }
 }

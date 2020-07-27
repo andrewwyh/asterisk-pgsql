@@ -15,9 +15,11 @@ class CreateDialplansTable extends Migration
     {
         Schema::create('dialplans', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('ext_number');
-            $table->string('dialstring1');        
+            $table->string('company');
+            $table->string('technology');
+            $table->string('dialstring1');     
+            $table->string('context');
         });
     }
 
