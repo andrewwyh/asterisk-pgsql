@@ -92,7 +92,7 @@ class EndpointController extends Controller
         $dialplan = new Dialplan([
             'ext_number' => $request->get('id'),
             'company' => $request->get('company'),
-            'technology' => 'PJSIP/',
+            'technology' => 'PJSIP',
             'dialstring1' => $request->get('id'),
             'context' => $request->get('context'),
         ]);
@@ -177,7 +177,7 @@ class EndpointController extends Controller
 
         $dialplan->ext_number = $request->get('id');
         $dialplan->company = $request->get('company');
-        $dialplan->technology = "PJSIP/";
+        $dialplan->technology = "PJSIP";
         $dialplan->dialstring1 = $request->get('id');
         $dialplan->context = $request->get('context');
         $dialplan->save();
